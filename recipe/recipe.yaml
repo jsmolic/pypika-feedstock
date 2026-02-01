@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pypika
-  version: 0.50.0
+  version: "0.51.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 2ff66a153adc8d8877879ff2abd5a3b050a5d2adfdf8659d3402076e385e35b3
+  sha256: ba71a4e4f320221727619401b49b93491c589d794d5347a97bf1e8dfaf8676bb
 
 build:
   number: 0
