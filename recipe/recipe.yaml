@@ -1,11 +1,10 @@
 schema_version: 1
 
 context:
-  name: pypika
   version: "0.51.1"
 
 package:
-  name: ${{ name|lower }}
+  name: pypika
   version: ${{ version }}
 
 source:
