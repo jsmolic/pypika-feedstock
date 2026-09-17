@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: pypika
-  version: "0.51.0"
+  version: "0.51.1"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: ba71a4e4f320221727619401b49b93491c589d794d5347a97bf1e8dfaf8676bb
+  url: https://github.com/kayak/pypika/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: e22f411afa4e0ab1f3d45e3f00d2f8ea94246af2cd8e1a79de18e9a4129d51c4
 
 build:
   number: 0
@@ -32,6 +32,16 @@ tests:
         - pypika
       pip_check: true
       python_version: ${{ python_min }}.*
+  - script:
+      - pytest -vvv pypika/tests
+    requirements:
+      run:
+        - pytest
+        - parameterized >=0.9.0
+        - coverage >=7.0.0
+    files:
+      source:
+        - pypika/tests/
 
 about:
   summary: A SQL query builder API for Python
