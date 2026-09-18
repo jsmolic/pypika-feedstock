@@ -31,8 +31,8 @@ tests:
         - pypika
       pip_check: true
       python_version:
-      - ${{ python_min }}.*
-      - '*'
+        - ${{ python_min }}.*
+        - '*'
   - script:
       - pytest -vvv pypika/tests
     requirements:
@@ -40,6 +40,7 @@ tests:
         - pytest
         - parameterized >=0.9.0
         - coverage >=7.0.0
+        - python ${{ python_min }}.*
     files:
       source:
         - pypika/tests/
